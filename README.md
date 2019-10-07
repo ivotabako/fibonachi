@@ -1,10 +1,12 @@
 // three ways to calculate fibonachi
 
+```
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp5
+namespace IvoCode
 {
     class Fibunachi
     {
@@ -53,3 +55,4 @@ namespace ConsoleApp5
         }
     }
 }
+```
