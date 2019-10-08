@@ -16,7 +16,7 @@ using System.Text;
 
 namespace Kri.School
 {
-    class Fibunachi
+    class Fibonachi
     {
         public long Solver1(int n)
         {
@@ -37,13 +37,15 @@ namespace Kri.School
                 return 1;
             }
 
-            if (!lookup.ContainsKey(n-1))
+            if (!lookup.ContainsKey(n - 1))
+            {
                 lookup[n - 1] = Solver2(n - 1);
+            }
 
             if (!lookup.ContainsKey(n - 2))
                 lookup[n - 2] = Solver2(n - 2);
 
-            return lookup[n - 1] + lookup[n - 2];
+            return checked(lookup[n - 1] + lookup[n - 2]);
         }
 
         public long Solver3(int n)
@@ -53,7 +55,7 @@ namespace Kri.School
             long temp2 = 1;
             for (int i = 0; i < n-2; i++)
             {
-                temp = temp1 + temp2;
+                temp = checked(temp1 + temp2);
                 temp1 = temp2;
                 temp2 = temp;
             }
@@ -77,5 +79,6 @@ namespace Kri.School
         }
     }
 }
+
 
 ```
